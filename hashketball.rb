@@ -164,7 +164,16 @@ def team_colors(team_name)
 end
 
 def team_names
-  
+  y = []
+  hashy = game_hash
+  hashy.each do |k1,v1|
+    v1.each do |k2,v2|
+      if k2 == :team_name
+        y << hashy[k1][k2]
+      end
+    end
+  end
+  return y
 end
 
 
