@@ -210,7 +210,23 @@ def player_stats(player)
 end
 
 def big_shoe_rebounds
-  
+  biggest_shoe = 0
+  most_rebounds = 0
+  hashy = game_hash
+  hashy.each do |k1,v1|
+    v1.each do |k2,v2|
+      if k2 == :players
+        v2.each do |k3,v3|
+            playa_shoe = hashy[k1][k2][k3][:shoe]
+            playa_rebounds = hashy[k1][k2][k3][:rebounds]
+            if playa_shoe>biggest_shoe
+              most_rebounds = playa_rebounds
+            end
+        end
+      end
+    end
+  end
+  return most_rebounds
 end
   
 
