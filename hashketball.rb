@@ -181,7 +181,7 @@ def player_numbers(team_name)
   hashy = game_hash
   hashy.each do |k1,v1|
     v1.each do |k2,v2|
-      if k2 == :players
+      if v2 == team_name
         v2.each do |k3,v3|
           if k3 == player_name
             return hashy[k1][k2][k3][:points]
