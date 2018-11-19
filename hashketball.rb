@@ -194,7 +194,20 @@ def player_numbers(team)
   return x
 end
 
-def player_stats
+def player_stats(player)
+  hashy = game_hash
+  hashy.each do |k1,v1|
+    v1.each do |k2,v2|
+      if k2 == :players
+        v2.each do |k3,v3|
+          if k3 == player
+            return hashy[k1][k2][k3]
+          end
+        end
+      end
+    end
+  end
+end
   
 end 
 
