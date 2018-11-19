@@ -194,6 +194,10 @@ def player_numbers(team)
   return x
 end
 
+def player_stats
+  
+end 
+
 
 
 
