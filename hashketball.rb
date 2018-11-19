@@ -151,7 +151,16 @@ def shoe_size(player_name)
 end
 
 def team_colors(team_name)
-  
+  hashy = game_hash
+  hashy.each do |k1,v1|
+    v1.each do |k2,v2|
+      if v2 == team_name
+        y = hashy[k1][:colors]
+        return y
+      end
+    end
+
+  end
 end
 
 
