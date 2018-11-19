@@ -177,14 +177,15 @@ def team_names
 end
 
 
-def player_numbers(team_name)
+def player_numbers(team)
   x = []
   hashy = game_hash
   hashy.each do |k1,v1|
+    print k1
     v1.each do |k2,v2|
-      if v2 == team_name
-        v2.each do |k3,v3|
-          if k3 == player_name
+      if hashy[k1][:team_name] == team
+        if k2 == :players
+          v2.each do |k3,v3|
             x << hashy[k1][k2][k3][:number]
           end
         end
