@@ -181,7 +181,6 @@ def player_numbers(team)
   x = []
   hashy = game_hash
   hashy.each do |k1,v1|
-    print k1
     v1.each do |k2,v2|
       if hashy[k1][:team_name] == team
         if k2 == :players
